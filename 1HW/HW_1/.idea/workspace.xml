@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8182d485-d807-491b-8a67-d10739e0f436" name="Changes" comment="1st Hw, javac, java, javadoc">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lesson/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/student/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/allclasses-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/allpackages-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/copy.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/element-list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/help-doc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/index-files/index-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/index-files/index-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/index-files/index-3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/index-files/index-4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/index-files/index-5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/index-files/index-6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/legal/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/legal/ASSEMBLY_EXCEPTION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/legal/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/legal/jquery.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/legal/jqueryUI.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/link.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/member-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/module-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/org/example/Main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/org/example/lesson/Test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/org/example/lesson/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/org/example/lesson/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/org/example/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/org/example/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/org/example/service/Service.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/org/example/service/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/org/example/service/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/org/example/student/Student.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/org/example/student/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/org/example/student/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/overview-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/overview-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/package-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/resources/glass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/resources/x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/script-dir/jquery-3.6.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/script-dir/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/script-dir/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/search-page.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/search.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/tag-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/javadoc/type-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/org/example/lesson/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/org/example/service/Service.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/out/org/example/student/Student.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dockerfile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2cHG2mYExtLfYsUHT6c6M3k0CvF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.Test.executor": "Run",
+    "Docker.Docker-Greetings.executor": "Run",
+    "Docker.Docker-test.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/YandexDisk/GeekBrains/JavaCore/1HW",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.smartKeys",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Docker.Docker-test">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="HW_1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.example.lesson.Test" />
+      <module name="HW_1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Docker-test" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="hw" />
+          <option name="containerName" value="Test" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-image" temporary="true">
+      <deployment type="docker-image">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Test" />
+      <item itemvalue="Docker.Docker-test" />
+    </list>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8182d485-d807-491b-8a67-d10739e0f436" name="Changes" comment="" />
+      <created>1707760888230</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1707760888230</updated>
+      <workItem from="1707760889330" duration="7001000" />
+      <workItem from="1707770076305" duration="3108000" />
+      <workItem from="1707840386650" duration="4368000" />
+    </task>
+    <task id="LOCAL-00001" summary="1st Hw, javac, java, javadoc">
+      <option name="closed" value="true" />
+      <created>1707844655604</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707844655604</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1st Hw, javac, java, javadoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="1st Hw, javac, java, javadoc" />
+  </component>
+</project>
