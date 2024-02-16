@@ -73,54 +73,8 @@ public class Program {
      * Ход игрока (компьютера)
      */
     static void aiTurn() {
-        for (int x = 0; x < fieldSizeX; x++) {
-            for (int y = 0; y < fieldSizeY; y++) {
-                // pattern *XX*
-                if (y - 1 >= 0 && y + 2 < fieldSizeY) {
-                    if (field[x][y] == DOT_HUMAN
-                            && field[x][y + 1] == DOT_HUMAN
-                            && field[x][y + 2] == DOT_EMPTY
-                            && field[x][y - 1] == DOT_EMPTY) {
-                        field[x][y - 1] = DOT_AI;
-                        return;
-                    }
-                }
-                // pattern XXX*
-                if (y + 3 < fieldSizeY) {
-                    if (field[x][y] == DOT_HUMAN
-                            && field[x][y + 1] == DOT_HUMAN
-                            && field[x][y + 2] == DOT_HUMAN
-                            && field[x][y + 3] == DOT_EMPTY) {
-                        field[x][y + 3] = DOT_AI;
-                        return;
-                    }
-                }
-                // pattern XX*XX
-                if (y + 4 <= fieldSizeY) {
-                    if (field[x][y] == DOT_HUMAN
-                            && field[x][y + 1] == DOT_HUMAN
-                            && field[x][y + 2] == DOT_EMPTY
-                            && field[x][y + 3] == DOT_HUMAN
-                            && field[x][y + 4] == DOT_HUMAN
-                    ) {
-                        field[x][y + 2] = DOT_AI;
-                        return;
-                    }
-                }
-                // pattern *XXX
-                if (y - 1 >= 0 && y + 2 < fieldSizeY){
-                    if (field[x][y] == DOT_HUMAN
-                            && field[x][y + 1] == DOT_HUMAN
-                            && field[x][y + 2] == DOT_HUMAN
-                            && field[x][y - 1] == DOT_EMPTY
-                    ) {
-                        field[x][y - 1] = DOT_AI;
-                        return;
-                    }
-
-                }
-            }
-        }
+        if(AiHorizontalCheck())
+            return;
 //        ########################
         int i;
         int j;
