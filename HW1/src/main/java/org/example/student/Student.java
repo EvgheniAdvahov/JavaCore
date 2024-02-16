@@ -1,5 +1,7 @@
 package org.example.student;
 
+import org.example.repo.UserRepository;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,10 +12,18 @@ import java.util.List;
 public class Student {
     String name;
     public static List<Student> studentList = new ArrayList<>();
+    public static UserRepository userRepository = new UserRepository() {
+    };
+
+    public static List<Student> getStudentList() {
+
+        return studentList;
+    }
 
     public Student(String name) {
         this.name = name;
         studentList.add(this);
+        userRepository.addToStudentList(this);
     }
 
     public String getName() {
@@ -25,6 +35,7 @@ public class Student {
 
         this.name = name;
     }
+
 
     @Override
     public String toString() {

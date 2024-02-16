@@ -29,6 +29,8 @@ public class Test {
         lesson.presence();
         lesson.test();
 
+        System.out.println(Student.userRepository.getStudentList1());
+        System.out.println(Student.getStudentList());
 
 
     }
