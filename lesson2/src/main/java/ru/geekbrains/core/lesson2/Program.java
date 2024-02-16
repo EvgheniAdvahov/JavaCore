@@ -73,14 +73,28 @@ public class Program {
      * Ход игрока (компьютера)
      */
     static void aiTurn() {
-        int x;
-        int y;
+//        for (int x = 0; x < fieldSizeX; x++) {
+//            for (int y = 0; y < fieldSizeY; y++) {
+//                if (y - 1 >= 0 && y + 2 <= fieldSizeY) {
+//                    if (field[x][y] == DOT_HUMAN
+//                            && field[x][y + 1] == DOT_HUMAN
+//                            && field[x][y + 2] == DOT_EMPTY
+//                            && field[x][y - 1] == DOT_EMPTY) {
+//                        field[x][y - 1] = DOT_AI;
+//                        return;
+//                    }
+//                }
+//            }
+//        }
+//        ########################
+        int i;
+        int j;
         do {
-            x = random.nextInt(fieldSizeX);
-            y = random.nextInt(fieldSizeY);
+            i = random.nextInt(fieldSizeX);
+            j = random.nextInt(fieldSizeY);
         }
-        while (!isCellEmpty(x, y));
-        field[x][y] = DOT_AI;
+        while (!isCellEmpty(i, j));
+        field[i][j] = DOT_AI;
     }
 
     /**
@@ -129,26 +143,18 @@ public class Program {
     static boolean checkWin(char dot) {
         for (int x = 0; x < fieldSizeX; x++) {
             for (int y = 0; y < fieldSizeY; y++) {
-                // Проверка по трем горизонталям
-                if (y + 3 <= fieldSizeY) {
-                    if (field[x][y] == dot && field[x][y + 1] == dot && field[x][y + 2] == dot && field[x][y + 3] == dot)
-                        return true;
-                }
-                // Проверка по трем вертикалям
-                if (x + 3 <= fieldSizeX) {
-                    if (field[x][y] == dot && field[x + 1][y] == dot && field[x + 2][y] == dot && field[x + 3][y] == dot)
-                        return true;
-                }
+                // Проверка по горизонтали
+                if (checkWin1(x, y, dot))
+                    return true;
+                // Проверка по вертикалям
+                if (checkWin2(x, y, dot))
+                    return true;
                 // Проверка по диагонали вниз
-                if (x + 3 <= fieldSizeY && y + 3 <= fieldSizeX) {
-                    if (field[x][y] == dot && field[x + 1][y + 1] == dot && field[x + 2][y + 2] == dot && field[x + 3][y + 3] == dot)
-                        return true;
-                }
+                if (checkWin3(x, y, dot))
+                    return true;
                 // Проверка по диагонали вверх
-                if (x - 3 >= 0 && y + 3 <= fieldSizeY) {
-                    if (field[x][y] == dot && field[x - 1][y + 1] == dot && field[x - 2][y + 2] == dot && field[x - 3][y + 3] == dot)
-                        return true;
-                }
+                if (checkWin4(x, y, dot))
+                    return true;
             }
         }
 
@@ -170,29 +176,35 @@ public class Program {
         return false;
     }
 
-    static boolean checkWinV2(char dot) {
-        for (int x = 0; x < fieldSizeX; x++) {
-            for (int y = 0; y < fieldSizeY; y++) {
-
-            }
+    static boolean checkWin1(int x, int y, char dot) {
+        if (y + 3 < fieldSizeY) {
+            if (field[x][y] == dot && field[x][y + 1] == dot && field[x][y + 2] == dot && field[x][y + 3] == dot)
+                return true;
         }
         return false;
     }
 
-    static boolean check1(int x, int y, char dot, int win) {
-        //if (field[x][y + 1] == dot && field[x][y + 2] == dot && field[x][y + 3] == dot)
+    static boolean checkWin2(int x, int y, char dot) {
+        if (x + 3 < fieldSizeX) {
+            if (field[x][y] == dot && field[x + 1][y] == dot && field[x + 2][y] == dot && field[x + 3][y] == dot)
+                return true;
+        }
         return false;
     }
 
-    static boolean check2(int x, int y, char dot, int win) {
+    static boolean checkWin3(int x, int y, char dot) {
+        if (x + 3 < fieldSizeY && y + 3 < fieldSizeX) {
+            if (field[x][y] == dot && field[x + 1][y + 1] == dot && field[x + 2][y + 2] == dot && field[x + 3][y + 3] == dot)
+                return true;
+        }
         return false;
     }
 
-    static boolean check3(int x, int y, char dot, int win) {
-        return false;
-    }
-
-    static boolean check4(int x, int y, char dot, int win) {
+    static boolean checkWin4(int x, int y, char dot) {
+        if (x - 3 >= 0 && y + 3 < fieldSizeY) {
+            if (field[x][y] == dot && field[x - 1][y + 1] == dot && field[x - 2][y + 2] == dot && field[x - 3][y + 3] == dot)
+                return true;
+        }
         return false;
     }
 
