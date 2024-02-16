@@ -73,19 +73,54 @@ public class Program {
      * Ход игрока (компьютера)
      */
     static void aiTurn() {
-//        for (int x = 0; x < fieldSizeX; x++) {
-//            for (int y = 0; y < fieldSizeY; y++) {
-//                if (y - 1 >= 0 && y + 2 <= fieldSizeY) {
-//                    if (field[x][y] == DOT_HUMAN
-//                            && field[x][y + 1] == DOT_HUMAN
-//                            && field[x][y + 2] == DOT_EMPTY
-//                            && field[x][y - 1] == DOT_EMPTY) {
-//                        field[x][y - 1] = DOT_AI;
-//                        return;
-//                    }
-//                }
-//            }
-//        }
+        for (int x = 0; x < fieldSizeX; x++) {
+            for (int y = 0; y < fieldSizeY; y++) {
+                // pattern *XX*
+                if (y - 1 >= 0 && y + 2 < fieldSizeY) {
+                    if (field[x][y] == DOT_HUMAN
+                            && field[x][y + 1] == DOT_HUMAN
+                            && field[x][y + 2] == DOT_EMPTY
+                            && field[x][y - 1] == DOT_EMPTY) {
+                        field[x][y - 1] = DOT_AI;
+                        return;
+                    }
+                }
+                // pattern XXX*
+                if (y + 3 < fieldSizeY) {
+                    if (field[x][y] == DOT_HUMAN
+                            && field[x][y + 1] == DOT_HUMAN
+                            && field[x][y + 2] == DOT_HUMAN
+                            && field[x][y + 3] == DOT_EMPTY) {
+                        field[x][y + 3] = DOT_AI;
+                        return;
+                    }
+                }
+                // pattern XX*XX
+                if (y + 4 <= fieldSizeY) {
+                    if (field[x][y] == DOT_HUMAN
+                            && field[x][y + 1] == DOT_HUMAN
+                            && field[x][y + 2] == DOT_EMPTY
+                            && field[x][y + 3] == DOT_HUMAN
+                            && field[x][y + 4] == DOT_HUMAN
+                    ) {
+                        field[x][y + 2] = DOT_AI;
+                        return;
+                    }
+                }
+                // pattern *XXX
+                if (y - 1 >= 0 && y + 2 < fieldSizeY){
+                    if (field[x][y] == DOT_HUMAN
+                            && field[x][y + 1] == DOT_HUMAN
+                            && field[x][y + 2] == DOT_HUMAN
+                            && field[x][y - 1] == DOT_EMPTY
+                    ) {
+                        field[x][y - 1] = DOT_AI;
+                        return;
+                    }
+
+                }
+            }
+        }
 //        ########################
         int i;
         int j;
@@ -96,6 +131,61 @@ public class Program {
         while (!isCellEmpty(i, j));
         field[i][j] = DOT_AI;
     }
+
+    /**
+     * Проверка AI по горизонтали
+     */
+    static boolean AiHorizontalCheck(){
+        for (int x = 0; x < fieldSizeX; x++) {
+            for (int y = 0; y < fieldSizeY; y++) {
+                // pattern *XX*
+                if (y - 1 >= 0 && y + 2 < fieldSizeY) {
+                    if (field[x][y] == DOT_HUMAN
+                            && field[x][y + 1] == DOT_HUMAN
+                            && field[x][y + 2] == DOT_EMPTY
+                            && field[x][y - 1] == DOT_EMPTY) {
+                        field[x][y - 1] = DOT_AI;
+                        return true;
+                    }
+                }
+                // pattern XXX*
+                if (y + 3 < fieldSizeY) {
+                    if (field[x][y] == DOT_HUMAN
+                            && field[x][y + 1] == DOT_HUMAN
+                            && field[x][y + 2] == DOT_HUMAN
+                            && field[x][y + 3] == DOT_EMPTY) {
+                        field[x][y + 3] = DOT_AI;
+                        return true;
+                    }
+                }
+                // pattern XX*XX
+                if (y + 4 <= fieldSizeY) {
+                    if (field[x][y] == DOT_HUMAN
+                            && field[x][y + 1] == DOT_HUMAN
+                            && field[x][y + 2] == DOT_EMPTY
+                            && field[x][y + 3] == DOT_HUMAN
+                            && field[x][y + 4] == DOT_HUMAN
+                    ) {
+                        field[x][y + 2] = DOT_AI;
+                        return true;
+                    }
+                }
+                // pattern *XXX
+                if (y - 1 >= 0 && y + 2 < fieldSizeY){
+                    if (field[x][y] == DOT_HUMAN
+                            && field[x][y + 1] == DOT_HUMAN
+                            && field[x][y + 2] == DOT_HUMAN
+                            && field[x][y - 1] == DOT_EMPTY
+                    ) {
+                        field[x][y - 1] = DOT_AI;
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
 
     /**
      * Проверка, является ли ячейка игрового поля пустой
@@ -157,7 +247,6 @@ public class Program {
                     return true;
             }
         }
-
 
 //        // Проверка по трем горизонталям
 //        if (field[0][0] == dot && field[0][1] == dot && field[0][2] == dot) return true;
