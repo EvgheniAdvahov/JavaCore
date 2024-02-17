@@ -10,7 +10,6 @@ public class Program {
     private static final char DOT_EMPTY = '*';
     private static final Scanner scanner = new Scanner(System.in);
     private static final Random random = new Random();
-    private static final int WIN_COUNT = 4; // Выигрышная комбинация
     private static char[][] field;
     private static int fieldSizeX;
     private static int fieldSizeY;
@@ -64,8 +63,7 @@ public class Program {
             System.out.print("Введите координаты хода X и Y\n(от 1 до 3) через пробел: ");
             x = scanner.nextInt() - 1;
             y = scanner.nextInt() - 1;
-        }
-        while (!isCellValid(x, y) || !isCellEmpty(x, y));
+        } while (!isCellValid(x, y) || !isCellEmpty(x, y));
         field[x][y] = DOT_HUMAN;
     }
 
@@ -91,8 +89,7 @@ public class Program {
         do {
             i = random.nextInt(fieldSizeX);
             j = random.nextInt(fieldSizeY);
-        }
-        while (!isCellEmpty(i, j));
+        } while (!isCellEmpty(i, j));
         field[i][j] = DOT_AI;
     }
 
@@ -104,55 +101,35 @@ public class Program {
             for (int y = 0; y < fieldSizeY; y++) {
                 // pattern *XX*
                 if (y - 1 >= 0 && y + 2 < fieldSizeY) {
-                    if (field[x][y] == DOT_HUMAN
-                            && field[x][y + 1] == DOT_HUMAN
-                            && field[x][y + 2] == DOT_EMPTY
-                            && field[x][y - 1] == DOT_EMPTY) {
+                    if (field[x][y] == DOT_HUMAN && field[x][y + 1] == DOT_HUMAN && field[x][y + 2] == DOT_EMPTY && field[x][y - 1] == DOT_EMPTY) {
                         field[x][y - 1] = DOT_AI;
                         return true;
                     }
                 }
                 // pattern XXX*
                 if (y + 3 < fieldSizeY) {
-                    if (field[x][y] == DOT_HUMAN
-                            && field[x][y + 1] == DOT_HUMAN
-                            && field[x][y + 2] == DOT_HUMAN
-                            && field[x][y + 3] == DOT_EMPTY) {
+                    if (field[x][y] == DOT_HUMAN && field[x][y + 1] == DOT_HUMAN && field[x][y + 2] == DOT_HUMAN && field[x][y + 3] == DOT_EMPTY) {
                         field[x][y + 3] = DOT_AI;
                         return true;
                     }
                 }
                 // pattern XX*XX
                 if (y + 4 <= fieldSizeY) {
-                    if (field[x][y] == DOT_HUMAN
-                            && field[x][y + 1] == DOT_HUMAN
-                            && field[x][y + 2] == DOT_EMPTY
-                            && field[x][y + 3] == DOT_HUMAN
-                            && field[x][y + 4] == DOT_HUMAN
-                    ) {
+                    if (field[x][y] == DOT_HUMAN && field[x][y + 1] == DOT_HUMAN && field[x][y + 2] == DOT_EMPTY && field[x][y + 3] == DOT_HUMAN && field[x][y + 4] == DOT_HUMAN) {
                         field[x][y + 2] = DOT_AI;
                         return true;
                     }
                 }
                 // pattern *XXX
                 if (y - 1 >= 0 && y + 2 < fieldSizeY) {
-                    if (field[x][y] == DOT_HUMAN
-                            && field[x][y + 1] == DOT_HUMAN
-                            && field[x][y + 2] == DOT_HUMAN
-                            && field[x][y - 1] == DOT_EMPTY
-                    ) {
+                    if (field[x][y] == DOT_HUMAN && field[x][y + 1] == DOT_HUMAN && field[x][y + 2] == DOT_HUMAN && field[x][y - 1] == DOT_EMPTY) {
                         field[x][y - 1] = DOT_AI;
                         return true;
                     }
                 }
                 // pattern *X*X*
                 if (y - 1 >= 0 && y + 3 < fieldSizeY) {
-                    if (field[x][y] == DOT_HUMAN
-                            && field[x][y + 1] == DOT_EMPTY
-                            && field[x][y + 2] == DOT_HUMAN
-                            && field[x][y + 3] == DOT_EMPTY
-                            && field[x][y - 1] == DOT_EMPTY
-                    ) {
+                    if (field[x][y] == DOT_HUMAN && field[x][y + 1] == DOT_EMPTY && field[x][y + 2] == DOT_HUMAN && field[x][y + 3] == DOT_EMPTY && field[x][y - 1] == DOT_EMPTY) {
                         field[x][y + 1] = DOT_AI;
                         return true;
                     }
@@ -173,10 +150,7 @@ public class Program {
                 //         X
                 //         *
                 if (x - 1 >= 0 && x + 2 < fieldSizeX) {
-                    if (field[x][y] == DOT_HUMAN
-                            && field[x + 1][y] == DOT_HUMAN
-                            && field[x + 2][y] == DOT_EMPTY
-                            && field[x - 1][y] == DOT_EMPTY) {
+                    if (field[x][y] == DOT_HUMAN && field[x + 1][y] == DOT_HUMAN && field[x + 2][y] == DOT_EMPTY && field[x - 1][y] == DOT_EMPTY) {
                         field[x - 1][y] = DOT_AI;
                         return true;
                     }
@@ -186,10 +160,7 @@ public class Program {
                 //         X
                 //         *
                 if (x + 3 < fieldSizeX) {
-                    if (field[x][y] == DOT_HUMAN
-                            && field[x + 1][y] == DOT_HUMAN
-                            && field[x + 2][y] == DOT_HUMAN
-                            && field[x + 3][y] == DOT_EMPTY) {
+                    if (field[x][y] == DOT_HUMAN && field[x + 1][y] == DOT_HUMAN && field[x + 2][y] == DOT_HUMAN && field[x + 3][y] == DOT_EMPTY) {
                         field[x + 3][y] = DOT_AI;
                         return true;
                     }
@@ -200,12 +171,7 @@ public class Program {
                 //         X
                 //         X
                 if (x + 4 <= fieldSizeX) {
-                    if (field[x][y] == DOT_HUMAN
-                            && field[x + 1][y] == DOT_HUMAN
-                            && field[x + 2][y] == DOT_EMPTY
-                            && field[x + 3][y] == DOT_HUMAN
-                            && field[x + 4][y] == DOT_HUMAN
-                    ) {
+                    if (field[x][y] == DOT_HUMAN && field[x + 1][y] == DOT_HUMAN && field[x + 2][y] == DOT_EMPTY && field[x + 3][y] == DOT_HUMAN && field[x + 4][y] == DOT_HUMAN) {
                         field[x + 2][y] = DOT_AI;
                         return true;
                     }
@@ -216,11 +182,7 @@ public class Program {
                 //         X
                 // pattern *XXX
                 if (x - 1 >= 0 && x + 2 < fieldSizeX) {
-                    if (field[x][y] == DOT_HUMAN
-                            && field[x + 1][y] == DOT_HUMAN
-                            && field[x + 2][y] == DOT_HUMAN
-                            && field[x - 1][y] == DOT_EMPTY
-                    ) {
+                    if (field[x][y] == DOT_HUMAN && field[x + 1][y] == DOT_HUMAN && field[x + 2][y] == DOT_HUMAN && field[x - 1][y] == DOT_EMPTY) {
                         field[x - 1][y] = DOT_AI;
                         return true;
                     }
@@ -231,11 +193,7 @@ public class Program {
                 //         X
                 //         *
                 if (x - 1 >= 0 && x + 3 < fieldSizeX) {
-                    if (field[x][y] == DOT_HUMAN
-                            && field[x + 1][y] == DOT_EMPTY
-                            && field[x + 2][y] == DOT_HUMAN
-                            && field[x + 3][y] == DOT_EMPTY
-                            && field[x - 1][y] == DOT_EMPTY) {
+                    if (field[x][y] == DOT_HUMAN && field[x + 1][y] == DOT_EMPTY && field[x + 2][y] == DOT_HUMAN && field[x + 3][y] == DOT_EMPTY && field[x - 1][y] == DOT_EMPTY) {
                         field[x + 1][y] = DOT_AI;
                         return true;
                     }
@@ -256,11 +214,7 @@ public class Program {
                 //       X
                 //     *
                 if (y - 2 >= 0 && y + 1 < fieldSizeY && x + 2 < fieldSizeX && x - 1 >= 0) {
-                    if (field[x][y] == DOT_HUMAN
-                            && field[x + 1][y - 1] == DOT_HUMAN
-                            && field[x + 2][y - 2] == DOT_EMPTY
-                            && field[x - 1][y + 1] == DOT_EMPTY
-                    ) {
+                    if (field[x][y] == DOT_HUMAN && field[x + 1][y - 1] == DOT_HUMAN && field[x + 2][y - 2] == DOT_EMPTY && field[x - 1][y + 1] == DOT_EMPTY) {
                         field[x - 1][y + 1] = DOT_AI;
                         return true;
                     }
@@ -270,11 +224,7 @@ public class Program {
                 //       X
                 //     *
                 if (x + 3 < fieldSizeX && y - 3 >= 0) {
-                    if (field[x][y] == DOT_HUMAN
-                            && field[x + 1][y - 1] == DOT_HUMAN
-                            && field[x + 2][y - 2] == DOT_HUMAN
-                            && field[x + 3][y - 3] == DOT_EMPTY
-                    ) {
+                    if (field[x][y] == DOT_HUMAN && field[x + 1][y - 1] == DOT_HUMAN && field[x + 2][y - 2] == DOT_HUMAN && field[x + 3][y - 3] == DOT_EMPTY) {
                         field[x + 3][y - 3] = DOT_AI;
                         return true;
                     }
@@ -285,12 +235,7 @@ public class Program {
                 //      X
                 //    X
                 if (x + 4 < fieldSizeX && y - 4 >= 0) {
-                    if (field[x][y] == DOT_HUMAN
-                            && field[x + 1][y - 1] == DOT_HUMAN
-                            && field[x + 2][y - 2] == DOT_EMPTY
-                            && field[x + 3][y - 3] == DOT_HUMAN
-                            && field[x + 4][y - 4] == DOT_HUMAN
-                    ) {
+                    if (field[x][y] == DOT_HUMAN && field[x + 1][y - 1] == DOT_HUMAN && field[x + 2][y - 2] == DOT_EMPTY && field[x + 3][y - 3] == DOT_HUMAN && field[x + 4][y - 4] == DOT_HUMAN) {
                         field[x + 2][y - 2] = DOT_AI;
                         return true;
                     }
@@ -300,11 +245,7 @@ public class Program {
                 //       X
                 //     X
                 if (x + 2 < fieldSizeX && y - 2 >= 0 && x - 1 >= 0 && y + 1 < fieldSizeY) {
-                    if (field[x][y] == DOT_HUMAN
-                            && field[x + 1][y - 1] == DOT_HUMAN
-                            && field[x + 2][y - 2] == DOT_HUMAN
-                            && field[x - 1][y + 1] == DOT_EMPTY
-                    ) {
+                    if (field[x][y] == DOT_HUMAN && field[x + 1][y - 1] == DOT_HUMAN && field[x + 2][y - 2] == DOT_HUMAN && field[x - 1][y + 1] == DOT_EMPTY) {
                         field[x - 1][y + 1] = DOT_AI;
                         return true;
                     }
@@ -315,12 +256,7 @@ public class Program {
                 //     X
                 //   *
                 if (x + 3 < fieldSizeX && y - 3 >= 0 && x - 1 >= 0 && y + 1 < fieldSizeY) {
-                    if (field[x][y] == DOT_HUMAN
-                            && field[x + 1][y - 1] == DOT_EMPTY
-                            && field[x + 2][y - 2] == DOT_HUMAN
-                            && field[x + 3][y - 3] == DOT_EMPTY
-                            && field[x - 1][y + 1] == DOT_EMPTY
-                    ) {
+                    if (field[x][y] == DOT_HUMAN && field[x + 1][y - 1] == DOT_EMPTY && field[x + 2][y - 2] == DOT_HUMAN && field[x + 3][y - 3] == DOT_EMPTY && field[x - 1][y + 1] == DOT_EMPTY) {
                         field[x + 1][y - 1] = DOT_AI;
                         return true;
                     }
@@ -341,11 +277,7 @@ public class Program {
                 //               X
                 //                 *
                 if (x - 1 >= 0 && y - 1 >= 0 && x + 2 < fieldSizeX && y + 2 < fieldSizeY) {
-                    if (field[x][y] == DOT_HUMAN
-                            && field[x + 1][y + 1] == DOT_HUMAN
-                            && field[x + 2][y + 2] == DOT_EMPTY
-                            && field[x - 1][y - 1] == DOT_EMPTY
-                    ) {
+                    if (field[x][y] == DOT_HUMAN && field[x + 1][y + 1] == DOT_HUMAN && field[x + 2][y + 2] == DOT_EMPTY && field[x - 1][y - 1] == DOT_EMPTY) {
                         field[x - 1][y - 1] = DOT_AI;
                         return true;
                     }
@@ -355,11 +287,7 @@ public class Program {
                 //               X
                 //                 *
                 if (x + 3 < fieldSizeX && y + 3 < fieldSizeY) {
-                    if (field[x][y] == DOT_HUMAN
-                            && field[x + 1][y + 1] == DOT_HUMAN
-                            && field[x + 2][y + 2] == DOT_HUMAN
-                            && field[x + 3][y + 3] == DOT_EMPTY
-                    ) {
+                    if (field[x][y] == DOT_HUMAN && field[x + 1][y + 1] == DOT_HUMAN && field[x + 2][y + 2] == DOT_HUMAN && field[x + 3][y + 3] == DOT_EMPTY) {
                         field[x + 3][y + 3] = DOT_AI;
                         return true;
                     }
@@ -370,12 +298,7 @@ public class Program {
                 //                 X
                 //                   X
                 if (x + 4 < fieldSizeX && y + 4 < fieldSizeY) {
-                    if (field[x][y] == DOT_HUMAN
-                            && field[x + 1][y + 1] == DOT_HUMAN
-                            && field[x + 2][y + 2] == DOT_EMPTY
-                            && field[x + 3][y + 3] == DOT_HUMAN
-                            && field[x + 4][y + 4] == DOT_HUMAN
-                    ) {
+                    if (field[x][y] == DOT_HUMAN && field[x + 1][y + 1] == DOT_HUMAN && field[x + 2][y + 2] == DOT_EMPTY && field[x + 3][y + 3] == DOT_HUMAN && field[x + 4][y + 4] == DOT_HUMAN) {
                         field[x + 2][y + 2] = DOT_AI;
                         return true;
                     }
@@ -385,11 +308,7 @@ public class Program {
                 //               X
                 //                 X
                 if (x - 1 >= 0 && y - 1 >= 0 && x + 2 < fieldSizeX && y + 2 < fieldSizeY) {
-                    if (field[x][y] == DOT_HUMAN
-                            && field[x + 1][y + 1] == DOT_HUMAN
-                            && field[x + 2][y + 2] == DOT_HUMAN
-                            && field[x - 1][y - 1] == DOT_EMPTY
-                    ) {
+                    if (field[x][y] == DOT_HUMAN && field[x + 1][y + 1] == DOT_HUMAN && field[x + 2][y + 2] == DOT_HUMAN && field[x - 1][y - 1] == DOT_EMPTY) {
                         field[x - 1][y - 1] = DOT_AI;
                         return true;
                     }
@@ -400,12 +319,7 @@ public class Program {
                 //                 X
                 //                   *
                 if (x + 3 < fieldSizeX && y + 3 < fieldSizeY && x - 1 >= 0 && y - 1 >= 0) {
-                    if (field[x][y] == DOT_HUMAN
-                            && field[x + 1][y + 1] == DOT_EMPTY
-                            && field[x + 2][y + 2] == DOT_HUMAN
-                            && field[x + 3][y + 3] == DOT_EMPTY
-                            && field[x - 1][y - 1] == DOT_EMPTY
-                    ) {
+                    if (field[x][y] == DOT_HUMAN && field[x + 1][y + 1] == DOT_EMPTY && field[x + 2][y + 2] == DOT_HUMAN && field[x + 3][y + 3] == DOT_EMPTY && field[x - 1][y - 1] == DOT_EMPTY) {
                         field[x + 1][y + 1] = DOT_AI;
                         return true;
                     }
@@ -463,17 +377,13 @@ public class Program {
         for (int x = 0; x < fieldSizeX; x++) {
             for (int y = 0; y < fieldSizeY; y++) {
                 // Проверка по горизонтали
-                if (checkWin1(x, y, dot))
-                    return true;
+                if (checkWin1(x, y, dot)) return true;
                 // Проверка по вертикалям
-                if (checkWin2(x, y, dot))
-                    return true;
+                if (checkWin2(x, y, dot)) return true;
                 // Проверка по диагонали вниз
-                if (checkWin3(x, y, dot))
-                    return true;
+                if (checkWin3(x, y, dot)) return true;
                 // Проверка по диагонали вверх
-                if (checkWin4(x, y, dot))
-                    return true;
+                if (checkWin4(x, y, dot)) return true;
             }
         }
 
@@ -553,16 +463,13 @@ public class Program {
             while (true) {
                 humanTurn();
                 printField();
-                if (checkState(DOT_HUMAN, "Вы победили!"))
-                    break;
+                if (checkState(DOT_HUMAN, "Вы победили!")) break;
                 aiTurn();
                 printField();
-                if (checkState(DOT_AI, "AI победил!"))
-                    break;
+                if (checkState(DOT_AI, "AI победил!")) break;
             }
             System.out.print("Желаете сыграть еще раз? (Y - да): ");
-            if (!scanner.next().equalsIgnoreCase("Y"))
-                break;
+            if (!scanner.next().equalsIgnoreCase("Y")) break;
         }
     }
 
