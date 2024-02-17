@@ -145,6 +145,18 @@ public class Program {
                         return true;
                     }
                 }
+                // pattern *X*X*
+                if (y - 1 >= 0 && y + 3 < fieldSizeY) {
+                    if (field[x][y] == DOT_HUMAN
+                            && field[x][y + 1] == DOT_EMPTY
+                            && field[x][y + 2] == DOT_HUMAN
+                            && field[x][y + 3] == DOT_EMPTY
+                            && field[x][y - 1] == DOT_EMPTY
+                    ) {
+                        field[x][y + 1] = DOT_AI;
+                        return true;
+                    }
+                }
             }
         }
         return false;
@@ -210,6 +222,21 @@ public class Program {
                             && field[x - 1][y] == DOT_EMPTY
                     ) {
                         field[x - 1][y] = DOT_AI;
+                        return true;
+                    }
+                }
+                // pattern *
+                //         X
+                //         *
+                //         X
+                //         *
+                if (x - 1 >= 0 && x + 3 < fieldSizeX) {
+                    if (field[x][y] == DOT_HUMAN
+                            && field[x + 1][y] == DOT_EMPTY
+                            && field[x + 2][y] == DOT_HUMAN
+                            && field[x + 3][y] == DOT_EMPTY
+                            && field[x - 1][y] == DOT_EMPTY) {
+                        field[x + 1][y] = DOT_AI;
                         return true;
                     }
                 }
@@ -282,6 +309,22 @@ public class Program {
                         return true;
                     }
                 }
+                // pattern   *
+                //         X
+                //       *
+                //     X
+                //   *
+                if (x + 3 < fieldSizeX && y - 3 >= 0 && x - 1 >= 0 && y + 1 < fieldSizeY) {
+                    if (field[x][y] == DOT_HUMAN
+                            && field[x + 1][y - 1] == DOT_EMPTY
+                            && field[x + 2][y - 2] == DOT_HUMAN
+                            && field[x + 3][y - 3] == DOT_EMPTY
+                            && field[x - 1][y + 1] == DOT_EMPTY
+                    ) {
+                        field[x + 1][y - 1] = DOT_AI;
+                        return true;
+                    }
+                }
             }
         }
         return false;
@@ -348,6 +391,22 @@ public class Program {
                             && field[x - 1][y - 1] == DOT_EMPTY
                     ) {
                         field[x - 1][y - 1] = DOT_AI;
+                        return true;
+                    }
+                }
+                // pattern   *
+                //             X
+                //               *
+                //                 X
+                //                   *
+                if (x + 3 < fieldSizeX && y + 3 < fieldSizeY && x - 1 >= 0 && y - 1 >= 0) {
+                    if (field[x][y] == DOT_HUMAN
+                            && field[x + 1][y + 1] == DOT_EMPTY
+                            && field[x + 2][y + 2] == DOT_HUMAN
+                            && field[x + 3][y + 3] == DOT_EMPTY
+                            && field[x - 1][y - 1] == DOT_EMPTY
+                    ) {
+                        field[x + 1][y + 1] = DOT_AI;
                         return true;
                     }
                 }
