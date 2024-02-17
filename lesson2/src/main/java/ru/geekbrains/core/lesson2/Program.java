@@ -73,9 +73,19 @@ public class Program {
      * Ход игрока (компьютера)
      */
     static void aiTurn() {
-        if(AiHorizontalCheck())
+        if (AiHorizontalCheck()) {
             return;
-//        ########################
+        }
+        if (AiVerticalCheck()) {
+            return;
+        }
+        if (AiMainDiagonalCheck()) {
+            return;
+        }
+        if (AiSecondDiagonalCheck()) {
+            return;
+        }
+        //        ########################
         int i;
         int j;
         do {
@@ -89,7 +99,7 @@ public class Program {
     /**
      * Проверка AI по горизонтали
      */
-    static boolean AiHorizontalCheck(){
+    static boolean AiHorizontalCheck() {
         for (int x = 0; x < fieldSizeX; x++) {
             for (int y = 0; y < fieldSizeY; y++) {
                 // pattern *XX*
@@ -125,13 +135,219 @@ public class Program {
                     }
                 }
                 // pattern *XXX
-                if (y - 1 >= 0 && y + 2 < fieldSizeY){
+                if (y - 1 >= 0 && y + 2 < fieldSizeY) {
                     if (field[x][y] == DOT_HUMAN
                             && field[x][y + 1] == DOT_HUMAN
                             && field[x][y + 2] == DOT_HUMAN
                             && field[x][y - 1] == DOT_EMPTY
                     ) {
                         field[x][y - 1] = DOT_AI;
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Проверка AI по вертикали
+     */
+    static boolean AiVerticalCheck() {
+        for (int x = 0; x < fieldSizeX; x++) {
+            for (int y = 0; y < fieldSizeY; y++) {
+                // pattern *
+                //         X
+                //         X
+                //         *
+                if (x - 1 >= 0 && x + 2 < fieldSizeX) {
+                    if (field[x][y] == DOT_HUMAN
+                            && field[x + 1][y] == DOT_HUMAN
+                            && field[x + 2][y] == DOT_EMPTY
+                            && field[x - 1][y] == DOT_EMPTY) {
+                        field[x - 1][y] = DOT_AI;
+                        return true;
+                    }
+                }
+                // pattern X
+                //         X
+                //         X
+                //         *
+                if (x + 3 < fieldSizeX) {
+                    if (field[x][y] == DOT_HUMAN
+                            && field[x + 1][y] == DOT_HUMAN
+                            && field[x + 2][y] == DOT_HUMAN
+                            && field[x + 3][y] == DOT_EMPTY) {
+                        field[x + 3][y] = DOT_AI;
+                        return true;
+                    }
+                }
+                // pattern X
+                //         X
+                //         *
+                //         X
+                //         X
+                if (x + 4 <= fieldSizeX) {
+                    if (field[x][y] == DOT_HUMAN
+                            && field[x + 1][y] == DOT_HUMAN
+                            && field[x + 2][y] == DOT_EMPTY
+                            && field[x + 3][y] == DOT_HUMAN
+                            && field[x + 4][y] == DOT_HUMAN
+                    ) {
+                        field[x + 2][y] = DOT_AI;
+                        return true;
+                    }
+                }
+                // pattern *
+                //         X
+                //         X
+                //         X
+                // pattern *XXX
+                if (x - 1 >= 0 && x + 2 < fieldSizeX) {
+                    if (field[x][y] == DOT_HUMAN
+                            && field[x + 1][y] == DOT_HUMAN
+                            && field[x + 2][y] == DOT_HUMAN
+                            && field[x - 1][y] == DOT_EMPTY
+                    ) {
+                        field[x - 1][y] = DOT_AI;
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Проверка AI по главной диагонали
+     */
+    static boolean AiMainDiagonalCheck() {
+        for (int x = 0; x < fieldSizeX; x++) {
+            for (int y = 0; y < fieldSizeY; y++) {
+                // pattern   *
+                //         X
+                //       X
+                //     *
+                if (y - 2 >= 0 && y + 1 < fieldSizeY && x + 2 < fieldSizeX && x - 1 >= 0) {
+                    if (field[x][y] == DOT_HUMAN
+                            && field[x + 1][y - 1] == DOT_HUMAN
+                            && field[x + 2][y - 2] == DOT_EMPTY
+                            && field[x - 1][y + 1] == DOT_EMPTY
+                    ) {
+                        field[x - 1][y + 1] = DOT_AI;
+                        return true;
+                    }
+                }
+                // pattern   X
+                //         X
+                //       X
+                //     *
+                if (x + 3 < fieldSizeX && y - 3 >= 0) {
+                    if (field[x][y] == DOT_HUMAN
+                            && field[x + 1][y - 1] == DOT_HUMAN
+                            && field[x + 2][y - 2] == DOT_HUMAN
+                            && field[x + 3][y - 3] == DOT_EMPTY
+                    ) {
+                        field[x + 3][y - 3] = DOT_AI;
+                        return true;
+                    }
+                }
+                // pattern    X
+                //          X
+                //        *
+                //      X
+                //    X
+                if (x + 4 < fieldSizeX && y - 4 >= 0) {
+                    if (field[x][y] == DOT_HUMAN
+                            && field[x + 1][y - 1] == DOT_HUMAN
+                            && field[x + 2][y - 2] == DOT_EMPTY
+                            && field[x + 3][y - 3] == DOT_HUMAN
+                            && field[x + 4][y - 4] == DOT_HUMAN
+                    ) {
+                        field[x + 2][y - 2] = DOT_AI;
+                        return true;
+                    }
+                }
+                // pattern   *
+                //         X
+                //       X
+                //     X
+                if (x + 2 < fieldSizeX && y - 2 >= 0 && x - 1 >= 0 && y + 1 < fieldSizeY) {
+                    if (field[x][y] == DOT_HUMAN
+                            && field[x + 1][y - 1] == DOT_HUMAN
+                            && field[x + 2][y - 2] == DOT_HUMAN
+                            && field[x - 1][y + 1] == DOT_EMPTY
+                    ) {
+                        field[x - 1][y + 1] = DOT_AI;
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Проверка AI по второстепенной диагонали
+     */
+    static boolean AiSecondDiagonalCheck() {
+        for (int x = 0; x < fieldSizeX; x++) {
+            for (int y = 0; y < fieldSizeY; y++) {
+                // pattern   *
+                //             X
+                //               X
+                //                 *
+                if (x - 1 >= 0 && y - 1 >= 0 && x + 2 < fieldSizeX && y + 2 < fieldSizeY) {
+                    if (field[x][y] == DOT_HUMAN
+                            && field[x + 1][y + 1] == DOT_HUMAN
+                            && field[x + 2][y + 2] == DOT_EMPTY
+                            && field[x - 1][y - 1] == DOT_EMPTY
+                    ) {
+                        field[x - 1][y - 1] = DOT_AI;
+                        return true;
+                    }
+                }
+                // pattern   X
+                //             X
+                //               X
+                //                 *
+                if (x + 3 < fieldSizeX && y + 3 < fieldSizeY) {
+                    if (field[x][y] == DOT_HUMAN
+                            && field[x + 1][y + 1] == DOT_HUMAN
+                            && field[x + 2][y + 2] == DOT_HUMAN
+                            && field[x + 3][y + 3] == DOT_EMPTY
+                    ) {
+                        field[x + 3][y + 3] = DOT_AI;
+                        return true;
+                    }
+                }
+                // pattern   X
+                //             X
+                //               *
+                //                 X
+                //                   X
+                if (x + 4 < fieldSizeX && y + 4 < fieldSizeY) {
+                    if (field[x][y] == DOT_HUMAN
+                            && field[x + 1][y + 1] == DOT_HUMAN
+                            && field[x + 2][y + 2] == DOT_EMPTY
+                            && field[x + 3][y + 3] == DOT_HUMAN
+                            && field[x + 4][y + 4] == DOT_HUMAN
+                    ) {
+                        field[x + 2][y + 2] = DOT_AI;
+                        return true;
+                    }
+                }
+                // pattern   *
+                //             X
+                //               X
+                //                 X
+                if (x - 1 >= 0 && y - 1 >= 0 && x + 2 < fieldSizeX && y + 2 < fieldSizeY) {
+                    if (field[x][y] == DOT_HUMAN
+                            && field[x + 1][y + 1] == DOT_HUMAN
+                            && field[x + 2][y + 2] == DOT_HUMAN
+                            && field[x - 1][y - 1] == DOT_EMPTY
+                    ) {
+                        field[x - 1][y - 1] = DOT_AI;
                         return true;
                     }
                 }
