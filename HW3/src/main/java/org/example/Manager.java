@@ -4,10 +4,8 @@ import java.time.LocalDate;
 
 public class Manager extends Employee{
 
-    public Manager() {
-    }
 
-    public Manager(int salary, String name, LocalDate birthday) {
+    private Manager(int salary, String name, LocalDate birthday) {
         super(salary, name, birthday);
     }
 

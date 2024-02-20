@@ -23,12 +23,10 @@ public class Main {
 
         //update salary
         for (Employee object : employeeList) {
-            if (object instanceof Manager)
-            {
+            if (object instanceof Manager) {
                 object.setSalary(Manager.updateSalary((Manager) object));
-            }
-            else {
-            object.setSalary(Employee.updateSalary(object, 7));
+            } else {
+                object.setSalary(Employee.updateSalary(object, 7));
             }
         }
 
