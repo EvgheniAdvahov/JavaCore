@@ -18,7 +18,7 @@ public class Main {
         workerList.add(worker2);
         workerList.add(worker3);
 
-
+        System.out.println("=========SORTING=============");
         System.out.println(workerList);
         //Sort by age
         Collections.sort(workerList);
@@ -26,10 +26,27 @@ public class Main {
 
 
         //Iterable
+        System.out.println("=========ITERABLE ARRAY=============");
         WorkerList listIterable = new WorkerList();
         for (BasicWorker basicWorker : listIterable) {
             System.out.println(basicWorker);
         }
+
+
+        System.out.println("=========ITERABLE ARRAYLIST=============");
+        HumanList<BasicWorker> list = new HumanList<>();
+        list.addToMyList(worker);
+        list.addToMyList(worker1);
+        list.addToMyList(worker2);
+        list.addToMyList(worker3);
+        for (Object o : list) {
+            System.out.println(o);
+        }
+
+
+
+
+
 
 
     }
