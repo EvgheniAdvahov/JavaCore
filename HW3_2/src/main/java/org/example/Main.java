@@ -19,14 +19,14 @@ public class Main {
         workerList.add(worker3);
 
 
-//        System.out.println(workerList);
-//        //Sort by age
-//        Collections.sort(workerList);
-//        System.out.println(workerList);
+        System.out.println(workerList);
+        //Sort by age
+        Collections.sort(workerList);
+        System.out.println(workerList);
 
 
+        //Iterable
         WorkerList listIterable = new WorkerList();
-
         for (BasicWorker basicWorker : listIterable) {
             System.out.println(basicWorker);
         }
