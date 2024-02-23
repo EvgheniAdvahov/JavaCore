@@ -1,10 +1,7 @@
 package org.example;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
-import java.util.List;
-import java.util.function.Consumer;
 
 public class WorkerList implements Iterable<BasicWorker> {
     private BasicWorker[] myWorkerLists = {
