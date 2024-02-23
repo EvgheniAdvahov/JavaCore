@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.Service.Operation;
+import org.example.Service.Operations.Operation;
 
 import java.util.ArrayList;
 import java.util.List;

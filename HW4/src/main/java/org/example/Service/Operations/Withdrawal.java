@@ -1,19 +1,20 @@
-package org.example.Service;
+package org.example.Service.Operations;
 
 import org.example.Account;
 import org.example.OperationList;
+import org.example.Service.Operations.Operation;
 
-public class Depozit  extends Operation {
+public class Withdrawal extends Operation {
 
-    public Depozit(Account account, double amount) {
+    public Withdrawal(Account account, double amount) {
         super(account, amount);
-        account.setBalance(account.getBalance() + amount);
+        account.setBalance(account.getBalance() - amount);
         OperationList.operationList.add(this);
     }
 
     @Override
     public String toString() {
-        return "Depozit{" +
+        return "Withdrawal{" +
                 "account=" + getAccount() +
                 ", amount=" + getAmount() +
                 '}';

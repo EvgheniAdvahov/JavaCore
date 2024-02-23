@@ -2,6 +2,9 @@ package org.example;
 
 import org.example.MeException.InsuficientFundsException;
 import org.example.Service.*;
+import org.example.Service.Operations.Depozit;
+import org.example.Service.Operations.Operation;
+import org.example.Service.Operations.Withdrawal;
 
 public class Main {
 
@@ -10,7 +13,7 @@ public class Main {
         Account account1 = new Account("Sergey", "55-66-777", 35000);
         Account account2 = new Account("Vladimir", "77-88-999", 5000);
 
-        Operation opeartion = new Depozit(account, -5000);
+//        Operation opeartion = new Depozit(account, -5000);
         Operation opeartion1 = new Withdrawal(account, 100000);
 
         for (Operation bankOperation : OperationList.operationList) {
@@ -23,15 +26,15 @@ public class Main {
             }
         }
 
-//        System.out.println(AccountList.accountList);
-//
-//        for (Account bankaccount : AccountList.accountList) {
-//            try {
-//                AccountCreationService.checkAccount(bankaccount);
-//            } catch (IllegalArgumentException e) {
-//                e.printStackTrace();
-//            }
-//        }
+        System.out.println(AccountList.accountList);
+
+        for (Account bankaccount : AccountList.accountList) {
+            try {
+                AccountCreationService.checkAccount(bankaccount);
+            } catch (IllegalArgumentException e) {
+                e.printStackTrace();
+            }
+        }
 
 
     }
