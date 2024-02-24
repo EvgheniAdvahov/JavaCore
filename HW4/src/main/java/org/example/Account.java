@@ -16,6 +16,7 @@ public class Account  {
         AccountList.accountList.add(this);
     }
 
+
     public String getName() {
         return name;
     }

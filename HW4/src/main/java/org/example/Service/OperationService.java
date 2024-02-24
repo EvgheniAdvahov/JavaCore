@@ -1,6 +1,6 @@
 package org.example.Service;
 
-import org.example.MeException.InsuficientFundsException;
+import org.example.MyException.InsuficientFundsException;
 import org.example.Service.Operations.Depozit;
 import org.example.Service.Operations.Operation;
 

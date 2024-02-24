@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bb3551f-d620-4a4e-8ca3-bc30735b4289" name="Changes" comment="error intersection">
+    <list default="true" id="0bb3551f-d620-4a4e-8ca3-bc30735b4289" name="Changes" comment="mvp">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AccountList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AccountList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Service/AccountCreationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Service/AccountCreationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MeException/InsuficientFundsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyException/InsuficientFundsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Service/OperationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Service/OperationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Service/Operations/Depozit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Service/Operations/Depozit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +84,8 @@
       <option name="presentableId" value="Default" />
       <updated>1708679766350</updated>
       <workItem from="1708679767449" duration="5137000" />
-      <workItem from="1708691247970" duration="10529000" />
+      <workItem from="1708691247970" duration="16435000" />
+      <workItem from="1708764596715" duration="1012000" />
     </task>
     <task id="LOCAL-00001" summary="hw4 almost">
       <option name="closed" value="true" />
@@ -106,7 +111,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708702723507</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="mvp">
+      <option name="closed" value="true" />
+      <created>1708704189911</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1708704189911</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,7 +129,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="hw4 almost" />
     <MESSAGE value="error intersection" />
-    <option name="LAST_COMMIT_MESSAGE" value="error intersection" />
+    <MESSAGE value="mvp" />
+    <option name="LAST_COMMIT_MESSAGE" value="mvp" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
