@@ -16,6 +16,5 @@ public class OperationService {
             if (operation.getAmount() > operation.getAccount().getBalance())
                 throw new InsuficientFundsException(balance, withdraw);
         }
-
     }
 }

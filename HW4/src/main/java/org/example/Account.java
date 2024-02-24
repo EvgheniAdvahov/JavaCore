@@ -15,6 +15,17 @@ public class Account  {
         this.balance = balance;
         AccountList.accountList.add(this);
     }
+    public static Account create(String name, String phone, double balance) throws IllegalArgumentException {
+        try{
+            if (balance < 0){
+                throw new IllegalArgumentException(name + " не может быть отрицательным!!");
+            }
+            return new Account(name, phone, balance);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 
 
     public String getName() {
