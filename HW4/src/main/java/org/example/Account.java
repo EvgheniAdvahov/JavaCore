@@ -1,24 +1,22 @@
 package org.example;
 
-import java.io.IOException;
-
-public class Account  {
+public class Account {
 
     String name;
     String phone;
 
     double balance;
 
-    public Account(String name, String phone, double balance)  {
+    protected Account(String name, String phone, double balance) {
         this.name = name;
         this.phone = phone;
         this.balance = balance;
-        AccountList.accountList.add(this);
     }
+
     public static Account create(String name, String phone, double balance) throws IllegalArgumentException {
-        try{
-            if (balance < 0){
-                throw new IllegalArgumentException(name + " не может быть отрицательным!!");
+        try {
+            if (balance < 0) {
+                throw new IllegalArgumentException("Аккаунт " + name + " не может быть отрицательным " + balance);
             }
             return new Account(name, phone, balance);
         } catch (IllegalArgumentException e) {

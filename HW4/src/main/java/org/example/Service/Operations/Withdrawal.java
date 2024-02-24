@@ -1,15 +1,26 @@
 package org.example.Service.Operations;
 
 import org.example.Account;
-import org.example.OperationList;
-import org.example.Service.Operations.Operation;
+import org.example.MyException.InsuficientFundsException;
 
 public class Withdrawal extends Operation {
 
-    public Withdrawal(Account account, double amount) {
+    private Withdrawal(Account account, double amount) {
         super(account, amount);
         account.setBalance(account.getBalance() - amount);
-        OperationList.operationList.add(this);
+    }
+
+    public static Withdrawal createWithdraw(Account account, double amount) throws InsuficientFundsException {
+        try {
+            if (account.getBalance() < amount) {
+                throw new InsuficientFundsException(account.getBalance(), amount);
+            } else {
+                return new Withdrawal(account, amount);
+            }
+        } catch (InsuficientFundsException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override

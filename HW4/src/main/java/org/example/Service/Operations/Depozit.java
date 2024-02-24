@@ -1,19 +1,24 @@
 package org.example.Service.Operations;
 
 import org.example.Account;
-import org.example.OperationList;
-import org.example.Service.Operations.Operation;
 
 public class Depozit extends Operation {
 
-    public Depozit(Account account, double amount) {
+    private Depozit(Account account, double amount) {
         super(account, amount);
         account.setBalance(account.getBalance() + amount);
-        OperationList.operationList.add(this);
     }
 
-
-
+    public static Depozit createDepozit(Account account, double amount) {
+        try {
+            if (amount < 0)
+                throw new IllegalArgumentException("Депозит не может быть отрицательным " + amount);
+            return new Depozit(account, amount);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 
 
     @Override

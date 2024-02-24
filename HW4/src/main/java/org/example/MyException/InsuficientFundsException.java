@@ -1,6 +1,6 @@
 package org.example.MyException;
 
-public class InsuficientFundsException extends IllegalArgumentException{
+public class InsuficientFundsException extends Exception{
     double balance;
     double withdraw;
 
@@ -11,6 +11,6 @@ public class InsuficientFundsException extends IllegalArgumentException{
 
     @Override
     public String getMessage() {
-        return "На счёте не достаточно средств, сумма которую хотите снять " + withdraw;
+        return "На счёте " + balance + ", сумма которую хотите снять " + withdraw;
     }
 }
