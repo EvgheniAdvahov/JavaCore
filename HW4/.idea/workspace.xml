@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bb3551f-d620-4a4e-8ca3-bc30735b4289" name="Changes" comment="mvp 3">
+    <list default="true" id="0bb3551f-d620-4a4e-8ca3-bc30735b4289" name="Changes" comment="Exception fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AccountList.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyException/InsuficientFundsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyException/InsuficientFundsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/OperationList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Service/Operations/Depozit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Service/Operations/Depozit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Service/Operations/Withdrawal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Service/Operations/Withdrawal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Service/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Service/Transaction.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +96,8 @@
       <workItem from="1708679767449" duration="5137000" />
       <workItem from="1708691247970" duration="16435000" />
       <workItem from="1708764596715" duration="8633000" />
-      <workItem from="1708782519302" duration="4666000" />
+      <workItem from="1708782519302" duration="5529000" />
+      <workItem from="1708850249520" duration="1607000" />
     </task>
     <task id="LOCAL-00001" summary="hw4 almost">
       <option name="closed" value="true" />
@@ -151,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708783351628</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Exception fixes">
+      <option name="closed" value="true" />
+      <created>1708787348742</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708787348742</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,7 +168,8 @@
     <MESSAGE value="mvp" />
     <MESSAGE value="mvp 2" />
     <MESSAGE value="mvp 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="mvp 3" />
+    <MESSAGE value="Exception fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Exception fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
