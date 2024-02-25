@@ -1,8 +1,8 @@
 package org.example;
 
-public class DebitAccount extends Account{
+public class DebitAccount extends Account {
 
-     public DebitAccount(String name, String phone, double balance) {
+    public DebitAccount(String name, String phone, double balance) {
         super(name, phone, balance);
     }
 }

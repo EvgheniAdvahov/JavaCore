@@ -33,11 +33,11 @@ public class Main {
 
         //Transaction exceptions
         try {
-        Transaction.SendMoney(account, account1, 30000);
-        Transaction.SendMoney(account, account1, -3000);
+            Transaction.SendMoney(account, account1, 30000);
+            Transaction.SendMoney(account, account1, -3000);
         } catch (InsuficientFundsException e) {
             e.printStackTrace();
-        } catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             e.printStackTrace();
         }
 

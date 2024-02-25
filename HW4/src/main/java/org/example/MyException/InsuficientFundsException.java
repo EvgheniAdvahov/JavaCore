@@ -1,6 +1,7 @@
 package org.example.MyException;
 
-public class InsuficientFundsException extends Exception{
+public class InsuficientFundsException extends Exception {
+
     double balance;
     double withdraw;
 
