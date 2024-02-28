@@ -15,7 +15,7 @@ public class Main {
         File[] files = pathDirectory.listFiles();
         for (File file : files) {
             if (file.isDirectory() && !file.getName().equals("backUP")){
-                File newDir =  new File(pathBackUPDir + "/" + file.getName());
+                File newDir =  new File(pathBackUPDir + "/" + file.getName() + "/");
                 newDir.mkdir();
                 System.out.println(file.getName());
             } else if (file.isFile()) {
