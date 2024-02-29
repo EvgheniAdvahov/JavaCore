@@ -21,12 +21,13 @@ public class Program2 {
             System.out.print("├─");
             indent += "│ ";
         }
-        System.out.println(file.getName());
 
+            System.out.println(file.getName());
         for (File myFile : myFiles) {
             if (myFile.isFile())
-                System.out.println(indent +"  +->" + myFile.getName());
+                System.out.println(indent +"+->" + myFile.getName());
         }
+
 
         File[] files = file.listFiles();
         if (files == null)
