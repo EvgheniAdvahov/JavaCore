@@ -1,22 +1,33 @@
 package org.example;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class Program1 {
 
     public static void main(String[] args) throws IOException {
-        print(new File("."), "", true);
+        print(new File("."), true, true);
     }
 
-    static void print(File file, String indent, boolean isLast) throws IOException {
+    static void print(File file, boolean isLast, boolean dirFlag) throws IOException {
+
+        if (dirFlag)
+            if (Files.exists(Path.of("./Backup"))) {
+                System.out.println("BackUp folder already exist");
+                dirFlag = false;
+            } else {
+                File backUpDir = new File("./backUP/");
+                backUpDir.mkdir();
+                dirFlag = false;
+            }
+
+
         File[] myFiles = file.listFiles();
 
-
-        System.out.println(file.getName());
         if (file.getName().equals("backUP")) {
             return;
         }
@@ -26,11 +37,16 @@ public class Program1 {
                 newDir.mkdir();
             }
             if (myFile.isFile()) {
-                System.out.println("parent is = " + myFile.getParentFile() + " my file is= " + myFile.getName());
-                Path newFilePath = Paths.get("./backUP/" + myFile.getParentFile() + "/" + myFile.getName());
-                Files.createFile(newFilePath);
+                try (FileOutputStream fileOutputStream = new FileOutputStream("./backUP/" + myFile.getParentFile() + "/" + myFile.getName())) {
+                    int c;
+                    //reading
+                    try (FileInputStream fileInputStream = new FileInputStream(myFile)) {
+                        while ((c = fileInputStream.read()) != -1) {
+                            fileOutputStream.write(c);
+                        }
+                    }
+                }
             }
-            System.out.println(myFile.getName());
         }
 
         File[] files = file.listFiles();
@@ -47,10 +63,8 @@ public class Program1 {
         int subDirCounter = 0;
         for (int i = 0; i < files.length; i++) {
             if (files[i].isDirectory()) {
-                print(files[i], indent, subDirTotal == ++subDirCounter);
+                print(files[i], subDirTotal == ++subDirCounter, dirFlag);
             }
         }
-
     }
-
 }
