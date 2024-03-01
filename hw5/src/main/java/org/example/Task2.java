@@ -2,7 +2,7 @@ package org.example;
 
 import java.io.File;
 
-public class Program2 {
+public class Task2 {
 
     public static void main(String[] args) {
         print(new File("."), "", true);

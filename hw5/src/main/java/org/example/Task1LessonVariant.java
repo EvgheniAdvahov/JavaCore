@@ -1,13 +1,11 @@
 package org.example;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class Program1 {
+public class Task1LessonVariant {
 
     public static void main(String[] args) throws IOException {
         print(new File("."), true, true);
@@ -36,17 +34,7 @@ public class Program1 {
                 File newDir = new File("./backUP/" + myFile.getParentFile() + "/" + myFile.getName());
                 newDir.mkdir();
             }
-            if (myFile.isFile()) {
-                try (FileOutputStream fileOutputStream = new FileOutputStream("./backUP/" + myFile.getParentFile() + "/" + myFile.getName())) {
-                    int c;
-                    //reading
-                    try (FileInputStream fileInputStream = new FileInputStream(myFile)) {
-                        while ((c = fileInputStream.read()) != -1) {
-                            fileOutputStream.write(c);
-                        }
-                    }
-                }
-            }
+            Task1MyVariant.copyFile(myFile);
         }
 
         File[] files = file.listFiles();
